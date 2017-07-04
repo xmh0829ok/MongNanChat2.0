@@ -29,13 +29,9 @@ class Application(tornado.web.Application):
 
         handlers = [
             (r"/", IndexHandler),
-<<<<<<< HEAD
-            (r"/index", IndexHandler),
-=======
             (r"/home", IndexHandler),
             (r"/index", IndexHandler),
             (r"/index/(.*)", IndexHandler),
->>>>>>> d0645e0a89f1e7adca668b38b0434eada16fc3b5
             (r"/login", LoginHandler),
 #            (r"/soc", SocketHandler),
             (r"/(.+?)", OtherPageHandler),

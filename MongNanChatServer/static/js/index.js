@@ -2,11 +2,12 @@ $(document).ready (function (){
 	removefriend();
 	startchat();
 	addfriend();
+	sendmessage();
 })
 
 function removefriend() {
 	//从url获取当前用户名
-	var username = window.location.href.split("=")[1];
+	var username = document.title;
 	console.log(username);
 	
 	$('.friendswindow').on("click", ".removeicon", function(){
@@ -69,10 +70,15 @@ function startchat(){
 		},10);
 
 		//###ajax调试注释区开始###
+		/*
 		$.ajax({
 			url: "", //路径待填写
+			type: "POST",
+			data: 
 		})
 		//###ajax调试注释区结束###
+		*/
+		getmessage();
 	})
 }
 
@@ -84,17 +90,20 @@ function getfriendID(a) {
 }
 
 function addfriend() {
-	var username = window.location.href.split("=")[1]; //获取当前用户id
+	var username = document.title; //获取当前用户id
 	$('.searchbutton').click(function(){
 		var targetid = $('#searchinfo').val();
+		$('#searchinfo').val("");
 		console.log(targetid);
 		$('#friendadded').empty();
 		$('#friendadded').empty().append(targetid);
 		$('.mymodal').show();
 
-		//###ajax调试时注释以下部分
+		
 		$('.addbutton').click(function(){ //点击确认添加时，进入以下部分
 			console.log(targetid);
+
+		//###ajax调试时注释以下部分
 			$('.friendswindow').append('<div class="friendscard"><div class="leftpart"><img class="ui tiny circular image" src="../static/image/back.jpg"></div><div class="midpart"><div class="username"><h5>'+targetid+'</h5></div></div><div class="rightpart"><i class="circular red remove icon removeicon"></i><i class="circular green arrow right icon chaticon"></i></div></div>');
 			$('.mymodal').hide();
 		//###ajax调试时注释以上部分
@@ -119,6 +128,49 @@ function addfriend() {
 		$('.cancelbutton').click(function(){
 			$('.mymodal').hide();
 		})
+	})
+	
+}
+
+function getmessage() {
+	/*###ajax调试注释区开始###
+	var username = document.title;
+	$.ajax({
+		url: "",//待填写
+		type: "GET",
+		success:function(data){
+			if (data.ask_result=='ok') {
+				var messages = data.messages;
+				//messages的格式为["消息1","消息2"]
+				$.each(messages,function(key,value){
+					$('.chatwrapper').append('<div class="messagein"><p>'+value+'</p></div>')
+				})
+			}
+		}
+	})
+	//###ajax调试注释区结束###
+*/
+
+	//###ajax调试时注释以下部分
+	messages = ["111","222"]; //测试用例
+	console.log(messages)
+	$.each(messages,function(key,value){
+		$('.chatwrapper').append('<div class="messagein"><p>'+value+'</p></div>')
+	})
+
+	//###ajax调试时注释以上部分
+}
+
+function polling() {
+	getmessage();
+	setInterval("getmessage();", 5000);  
+}
+
+function sendmessage(){
+	$('.sendbutton').click(function(){
+		var message = $('.textinput').val();
+		$('.chatwrapper').append('<div class="messageout"><p>'+message+'</p></div>');
+		$('.textinput').val("");
 	})
 	
 }

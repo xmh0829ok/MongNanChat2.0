@@ -1,0 +1,242 @@
+html {
+	overflow-y: hidden;
+}
+
+body {
+	background-image: url(../image/back.jpg);
+	background-repeat: repeat;
+	overflow:-Scroll;
+	overflow-y:hidden;
+}
+
+.main {
+	position: absolute;
+	width: 800px;
+	height: 450px;
+	left: 50%;
+	top: 10%;
+	margin-left: -400px;
+}
+
+.friendswrapper {
+	height: 450px;
+	padding:0 !important;
+	background: #ec008c !important;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fc6767, #ec008c) !important;  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fc6767, #ec008c) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.chatwindow {
+	height: 450px;
+	padding: 0 !important;
+	display: none;
+}
+
+.banner {
+	height: 40px;
+	width: 100%;
+	padding-left: 8px;
+	padding-top: 9px;
+}
+
+.friends {
+	height: 370px;
+	width: 103.8%;
+	background-color: #fff;
+	overflow-y:scroll;
+	overflow-x:hidden; 
+}
+
+.friendswindow {
+	width: 100%;
+}
+
+.friends::-webkit-scrollbar {
+	width: 10px;
+  height: 10px;
+  /*background-color: #333;*/
+}
+
+.friends::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  border-radius: 10px;
+ /* background-color: #333;*/
+}
+
+.friends::-webkit-scrollbar-thumb{
+    /*width: 10px;*/
+  height: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+ /* background-color: #555;*/
+}
+
+.searchwrapper {
+	padding-top:5px;
+	padding-left: 10px;
+}
+
+.searchinput {
+	height: 30px;
+	width: 75%;
+}
+
+.searchbutton {
+	width: 20% !important;
+	height: 30px !important;
+}
+
+.friendscard {
+	height: 90px;
+	width: 100%;
+	-moz-box-shadow:1px 2px 3px #A8A8A8; 
+	-webkit-box-shadow:1px 2px 3px #A8A8A8; 
+	box-shadow:1px 2px 3px #A8A8A8;
+	color: #333;
+}
+
+.chatwrapper {
+	height: 68%;
+}
+
+.inputwrapper {
+	height: 32%;
+}
+
+.chatbar {
+	height: 20px;
+	width: 541px;
+	margin-left: -1px;
+	background: #ec008c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fc6767, #ec008c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fc6767, #ec008c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.leftpart {
+	width:40%;
+	float:left;
+	height:90px;
+	padding-left:5px;
+	padding-top:5px;
+}
+
+.midpart {
+	width:45%;
+	float:left;
+	height:90px;
+	padding-top:35px;
+	padding-left: 5px;
+}
+
+.rightpart {
+	width: 15%;
+	float: left;
+	padding-top: 17px;
+}
+
+.leftbar {
+	width: 85%;
+	height: 100%;
+	float: left;
+}
+
+.rightbar {
+	width: 15%;
+	height: 100%;
+	float: left;
+	padding:3px;
+	padding-left: 8px;
+	padding-top: 4px;
+}
+
+.textinput {
+	width: 100%;
+	height: 86%;
+}
+
+.sendbutton {
+	height: 85%;
+	width: 95%;
+	border-style: solid;
+	border-width: 2px;
+	border-image: -webkit-linear-gradient( #fc6767, #ec008c) 20 20;
+  border-image: -moz-linear-gradient( #fc6767, #ec008c) 20 20;
+  border-image: linear-gradient( #fc6767, #ec008c) 20 20;
+  text-align: center;
+  cursor: pointer;
+  transition-property:border-image 3s linear .5s;
+}
+
+.sendbutton:hover {
+	border-image: -webkit-linear-gradient( #ec008c, #fc6767) 20 20;
+  border-image: -moz-linear-gradient( #ec008c, #fc6767) 20 20;
+  border-image: linear-gradient( #ec008c, #fc6767) 20 20;
+}
+
+.sendbutton p {
+	font-size: 41px;
+	margin-top: -4px;
+	background-image: -webkit-linear-gradient( #fc6767, #ec008c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition-property:background-image 3s linear .5s;
+}
+
+.sendbutton p:hover {
+	background-image: -webkit-linear-gradient( #ec008c, #fc6767);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.chatto{
+	height: 40px;
+	padding-left: 12px;
+}
+
+.chatto p {
+	font-size: 20px;
+}
+
+.messagein {
+	min-height: 30px;
+	width: 180px;
+	margin-left: 10px;
+	padding-left: 6px;
+	padding-top: 5px;
+	border-radius: 5px;
+	background: #eef2f3;  /* fallback for old browsers */
+}
+
+.messageout {
+	min-height: 30px;
+	width: 180px;
+	padding-left: 6px;
+	padding-top: 5px;
+	margin-right: 10px;
+	border-radius: 5px;
+	float: right;
+	background: #eef2f3;
+}
+
+.removeicon,
+.chaticon {
+	cursor: pointer;
+}
+
+.mymodal {
+	background-color: #000;
+	opacity: .9;
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+	display: none;
+}
+
+.mymodal .card {
+	position: absolute;
+	top:37%;
+	left: 37%;
+	text-align: center;
+}

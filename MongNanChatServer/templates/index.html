@@ -20,13 +20,14 @@
 					</div>
 					<div class="friends">
 						<div class="friendswindow">
+							{% for friend in friends %}
 							<div class="friendscard">
 								<div class="leftpart">
 									<img class="ui tiny circular image" src="../static/image/back.jpg">
 								</div>
 								<div class="midpart">
 									<div class="username">
-										<h5>111</h5>
+										<h5>{{ friend }}</h5>
 									</div>
 								</div>
 								<div class="rightpart">
@@ -34,6 +35,7 @@
 									<i class="circular green arrow right icon chaticon"></i>
 								</div>
 							</div>
+							{% end %}
 						</div>
 					</div>
 					<div class="searchwrapper">

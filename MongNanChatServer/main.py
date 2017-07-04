@@ -3,9 +3,7 @@ import os
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
-import MySQLdb
 import torndb
-import subprocess
 
 from handlers.index import IndexHandler
 from handlers.otherpage import OtherPageHandler

@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-#-*- coding: utf-8 -*-
-
-import tornado.web
-
-class BaseHandler(tornado.web.RequestHandler):
-    def get_current_user(self):
-        return self.get_secure_cookie("username")
-
-class IndexHandler(BaseHandler):
-    @tornado.web.authenticated
-    def get(self):
-        self.render('index.html', user=self.current_user)
-=======
 #-*- coding: utf-8 -*-
 
 import tornado.web
@@ -36,4 +22,3 @@ class IndexHandler(BaseHandler):
         self.application.db.execute(online)
         self.users.add(self.current_user)
         print self.users
->>>>>>> d0645e0a89f1e7adca668b38b0434eada16fc3b5

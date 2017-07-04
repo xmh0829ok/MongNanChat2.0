@@ -3,16 +3,9 @@ import json
 
 import tornado.web
 from handlers.index import BaseHandler
-<<<<<<< HEAD
-from pycket.session import SessionMixin
-from Crypto.Hash import SHA
-
-class LoginHandler(BaseHandler, SessionMixin):
-=======
 from Crypto.Hash import SHA
 
 class LoginHandler(BaseHandler):
->>>>>>> d0645e0a89f1e7adca668b38b0434eada16fc3b5
 
     def get(self):
         return self.render('login.html')
@@ -26,12 +19,6 @@ class LoginHandler(BaseHandler):
             getInfo = 'select id from users where username="%s" and pwd_hash="%s"' % (username, pwd_hash)
             if username and password and self.application.db.get(getInfo):
                 self.set_secure_cookie('username', self.get_argument('username'))
-<<<<<<< HEAD
-
-                #self.session.set('user_session_test', self.get_argument('username'))
-                #txt = str(self.session.get('user_session_test'))
-=======
->>>>>>> d0645e0a89f1e7adca668b38b0434eada16fc3b5
                 self.write("1")
         elif log_reg_flag == '0':
             username = self.get_argument('username')
